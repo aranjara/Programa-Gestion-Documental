@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script, and contain the binary number of bytes.
+#  If you want to build a bundle on your local machine, it is fine to include them.
+#  However, if you are using a CI/CD, you should exclude them.
+# *.manifest
+# *.spec
+
+# Installer files
+*.msi
+*.exe
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Agent specific
+.agent/
+
+# Database (optional - comment if you want to keep the local DB in git)
+# app.db
+
+# Project specific
+uploads/
+salidas/
+memory.md
+scratch/

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivo Documental - Sistema de Gestión</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for modern icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js for statistics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Login Section -->
+        <div id="login-screen" class="screen active">
+            <div class="login-card glass">
+                <div class="login-header">
+                    <img src="static/assets/escudo.png" alt="Logo" class="login-logo">
+                    <h1>Archivo Documental</h1>
+                    <p>Ingresa tus credenciales para acceder</p>
+                </div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Usuario</label>
+                        <div class="input-with-icon">
+                            <i data-lucide="user"></i>
+                            <input type="text" id="username" placeholder="Tu nombre de usuario" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-with-icon">
+                            <i data-lucide="lock"></i>
+                            <input type="password" id="password" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span>Ingresar</span>
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                    <div id="login-error" class="error-message"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Section -->
+        <div id="main-screen" class="screen">
+            <aside class="sidebar glass">
+                <div class="sidebar-header">
+                    <img src="static/assets/escudo.png" alt="Logo" class="sidebar-logo">
+                    <span>Gestión de Archivo</span>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="active" data-section="dashboard">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </li>
+                        <li data-section="records">
+                            <i data-lucide="database"></i>
+                            <span>Registros</span>
+                        </li>
+                        <li data-section="generate-fuid">
+                            <i data-lucide="file-text"></i>
+                            <span>Generar FUID</span>
+                        </li>
+                        <li data-section="generate-rotulos">
+                            <i data-lucide="tags"></i>
+                            <span>Generar Rótulos</span>
+                        </li>
+                        <li data-section="import" class="admin-only">
+                            <i data-lucide="upload"></i>
+                            <span>Importar Excel</span>
+                        </li>
+                        <li data-section="config" class="admin-only">
+                            <i data-lucide="settings"></i>
+                            <span>Configuración</span>
+                        </li>
+                        <li data-section="audit" class="admin-only">
+                            <i data-lucide="history"></i>
+                            <span>Auditoría</span>
+                        </li>
+                        <li data-section="users" class="admin-only">
+                            <i data-lucide="users"></i>
+                            <span>Usuarios</span>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <div class="user-avatar" id="user-initials">AD</div>
+                        <div class="user-details">
+                            <span id="user-fullname" class="user-name">Administrador</span>
+                            <span id="user-role" class="user-role">Admin</span>
+                        </div>
+                    </div>
+                    <button id="theme-toggle" class="btn btn-icon-text">
+                        <i data-lucide="moon"></i>
+                        <span>Modo Oscuro</span>
+                    </button>
+                    <button id="change-pass-btn" class="btn btn-icon-text">
+                        <i data-lucide="key"></i>
+                        <span>Cambiar Clave</span>
+                    </button>
+                    <button id="logout-btn" class="btn btn-icon-text">
+                        <i data-lucide="log-out"></i>
+                        <span>Cerrar Sesión</span>
+                    </button>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <header class="content-header">
+                    <h2 id="section-title">Registros Documentales</h2>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <i data-lucide="search"></i>
+                            <input type="text" id="global-search" placeholder="Buscar registros...">
+                        </div>
+                        <button id="btn-new-record" class="btn btn-primary">
+                            <i data-lucide="plus"></i>
+                            <span>Nuevo Registro</span>
+                        </button>
+                    </div>
+                </header>
+
+                <div id="content-area">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-container" class="modal-overlay">
+            <div class="modal glass">
+                <div class="modal-header">
+                    <h3 id="modal-title">Modal Title</h3>
+                    <button class="btn-close-modal"><i data-lucide="x"></i></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Modal content -->
+                </div>
+                <div class="modal-footer" id="modal-footer">
+                    <!-- Modal buttons -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div id="toast-container"></div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>
